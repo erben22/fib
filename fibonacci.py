@@ -25,6 +25,12 @@ class Fibonacci:
             the sequenece of this instance.
         """
 
+        if self.desired_sequence < 0:
+            raise TypeError("Negative values are unsupported.")
+
+        if self.desired_sequence == 0:
+            return self.desired_sequence
+
         prev_value = 0
         fibonacci_value = 1
 

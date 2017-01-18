@@ -32,7 +32,10 @@ def execute_fibonacci_query(fibonacci_sequence):
 
     response = requests.get(url, params=request_parameters)
 
-    return response.text
+    if response.status_code == 200:
+        return response.text
+    else:
+        raise Exception("Unexpected response code")
 
 
 if __name__ == '__main__':

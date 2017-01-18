@@ -24,9 +24,12 @@ class FibonacciHandler:
     def GET(self):
         """Implementation of the GET handler interface."""
 
-        query_parameters = web.input()
-        fibonacci = Fibonacci(int(query_parameters.desired_sequence))
-        return fibonacci.calculate()
+        try:
+            desired_sequence = int(web.input().desired_sequence)
+            fibonacci = Fibonacci(desired_sequence)
+            return fibonacci.calculate()
+        except:
+            raise web.HTTPError('400 Bad Request', {})
 
 if __name__ == "__main__":
     """Main method that fires up the web application and listens for
