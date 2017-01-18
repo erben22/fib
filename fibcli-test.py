@@ -1,6 +1,7 @@
 """Test cases for the Fibonacci client using the unittest framework."""
 
 import unittest
+import threading
 from fibcli import execute_fibonacci_query
 
 
@@ -34,6 +35,55 @@ class TestFibonacciCli(unittest.TestCase):
         """
 
         self.assertRaises(Exception, execute_fibonacci_query, "string")
+
+    def test_execute_fib_query_decent_sequence_request_succeeds(self):
+        """Execute the execute_fib_query method using desired sequence that is
+        of a decent size, and ensure the expected value is returned.
+        """
+
+        expected_value = ("3477467391803702010525174406043359697886849349278437"
+            "106573522393041216496868459679756364593924530533774930268750207447"
+            "601458424017923787493211137199196185880957244855839195410199618845"
+            "239083591334573573345387917784809104307561074077615552181139983742"
+            "87548487")
+
+        self.assertEqual(execute_fibonacci_query(1234), expected_value)
+
+    def test_execute_fib_query_large_sequence_request_succeeds(self):
+        """Execute the execute_fib_query method using desired sequence that is
+        very large and ensure a non-zero value is returned.  Expected runtime
+        on a somewhat modern computer is in the neighborhood of 30s.
+        """
+
+        fibonacci_value = execute_fibonacci_query(1234567)
+        self.assertTrue(fibonacci_value)
+
+
+    def execute_concurrent_request(self, desired_sequence):
+        """Helper method to execute a client request in a thread context.
+            Just ensuring here we get a valid valud returned, but not actually
+            worried about the exact value.
+        """
+
+        self.assertTrue(execute_fibonacci_query(desired_sequence))
+
+    def test_execute_fib_query_concurrent_requests_succeeds(self):
+        """Execute the execute_fib_query method using 5 concurrent requests
+        and ensure they all succeed.  The helper method will raise an assert
+        if there is a failure retriving any of the concurrent requests.
+
+        NOTE:  I have seen failures when a large number of requests are made
+        simultaneously, such as 10-20 requests kicked off.  Suspect the
+        requests library may have an issue from the stack trace -- the server
+        side seems ok.
+        """
+
+        for thread_index in range(99999, 99950, -10):
+            request_thread = threading.Thread(
+                target=self.execute_concurrent_request,
+                args=(str(thread_index),))
+            request_thread.start()
+
 
 if __name__ == '__main__':
     """Main method to setup logging and initiate the test runner."""

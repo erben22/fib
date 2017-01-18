@@ -31,6 +31,7 @@ class FibonacciHandler:
         except:
             raise web.HTTPError('400 Bad Request', {})
 
+
 if __name__ == "__main__":
     """Main method that fires up the web application and listens for
         prospective requests from various clients.
