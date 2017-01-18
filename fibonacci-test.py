@@ -17,4 +17,12 @@ class TestFibonacci(unittest.TestCase):
 # Runner for tests in the TestFibonacci class.
 
 if __name__ == '__main__':
-    unittest.main()
+    # Setup the test runner to output text results to a log file:
+
+    logFileName = 'fibonacci-test.log'
+    logFile = open(logFileName, "w")
+    runner = unittest.TextTestRunner(logFile)
+
+    unittest.main(testRunner=runner)
+
+    logFile.close()

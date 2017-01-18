@@ -17,13 +17,19 @@
 import sys
 import requests
 
+def execute_fib_query(fibonacciSequence):
+    url = 'http://localhost:8081/fibonacci'
+    requestParameters = {'desiredSequence': int(fibonacciSequence)}
+
+    response = requests.get(url, params=requestParameters)
+
+    return response.text
+
+
 if __name__ == '__main__':
     if len(sys.argv) == 2:
-        url = 'http://localhost:8081/fibonacci'
-        requestParameters = {'desiredSequence': int(sys.argv[1])}
+        fibonacciValue = execute_fib_query(int(sys.argv[1]))
 
-        response = requests.get(url, params=requestParameters)
-
-        print(response.text)
+        print(fibonacciValue)
     else:
         print("Please supply the Fibonacci sequence value you desire as an argument.")

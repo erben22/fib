@@ -31,5 +31,6 @@ class fibonacciHandler:
 # prospective requests from various clients.
 
 if __name__ == "__main__":
+    web.config.debug = False
     app = web.application(urls, globals())
     app.run()
