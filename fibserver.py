@@ -25,7 +25,7 @@ class FibonacciHandler:
         """Implementation of the GET handler interface."""
 
         query_parameters = web.input()
-        fibonacci = Fibonacci(int(query_parameters.desiredSequence))
+        fibonacci = Fibonacci(int(query_parameters.desired_sequence))
         return fibonacci.calculate()
 
 if __name__ == "__main__":

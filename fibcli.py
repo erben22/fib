@@ -28,7 +28,7 @@ def execute_fibonacci_query(fibonacci_sequence):
     """
 
     url = 'http://localhost:8080/fibonacci'
-    request_parameters = {'desiredSequence': int(fibonacci_sequence)}
+    request_parameters = {'desired_sequence': int(fibonacci_sequence)}
 
     response = requests.get(url, params=request_parameters)
 

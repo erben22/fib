@@ -4,7 +4,7 @@
 
 PYTHON_BIN=python3
 FIB_SERVER=fibserver.py
-FIB_SERVER_PORT=8081
+FIB_SERVER_PORT=8080
 SERVER_LOG=fibserver.log
 
 # Fire off the server to listen for clients.
