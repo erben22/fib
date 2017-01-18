@@ -8,6 +8,7 @@
 import unittest
 from fibonacci import Fibonacci
 
+
 class TestFibonacci(unittest.TestCase):
 
     def test_calculate(self):

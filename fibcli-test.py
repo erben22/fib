@@ -2,11 +2,10 @@
 #
 # author: R. Cody Erben (erben22@gmail.com)
 # date: 01/17/2017
-#
-# TODO: Study up on Python coding styles and apply here.
 
 import unittest
 from fibcli import execute_fib_query
+
 
 class TestFibonacciCli(unittest.TestCase):
 

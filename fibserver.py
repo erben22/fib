@@ -14,8 +14,9 @@ from fibonacci import Fibonacci
 # Setup a mapping of endpoints to respective handlers.
 
 urls = (
-  '/fibonacci', 'fibonacciHandler'
+    '/fibonacci', 'fibonacciHandler'
 )
+
 
 # Fibonacci endpoint handler.  Will expect a parameter to be present
 # for the sequence to calcualte, and if present, will create an instance

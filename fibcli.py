@@ -5,7 +5,6 @@
 # author: R. Cody Erben (erben22@gmail.com)
 # date: 01/15/2017
 #
-# TODO: Study up on Python coding styles and apply here.
 # TODO: Add some additional error handling:
 #       - What if someone passing in a string on the command line?
 #       - What if the web server is not available?  Need to look at
@@ -16,6 +15,7 @@
 
 import sys
 import requests
+
 
 def execute_fib_query(fibonacciSequence):
     url = 'http://localhost:8081/fibonacci'
@@ -32,4 +32,4 @@ if __name__ == '__main__':
 
         print(fibonacciValue)
     else:
-        print("Please supply the Fibonacci sequence value you desire as an argument.")
+        print("Please supply the Fibonacci sequence value as an argument")

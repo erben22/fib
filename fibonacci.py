@@ -10,17 +10,18 @@
 # TODO: Overflow handling?
 # TODO: Can I cleanup the calculation
 
+
 class Fibonacci:
     def __init__(self, desiredSequence):
-      self.desiredSequence = desiredSequence
+        self.desiredSequence = desiredSequence
 
     def calculate(self):
-      prevValue = 0
-      fibonacciValue = 1
+        prevValue = 0
+        fibonacciValue = 1
 
-      for _ in range(1, self.desiredSequence):
-          temp = fibonacciValue
-          fibonacciValue += prevValue
-          prevValue = temp
-      else:
-          return fibonacciValue
+        for _ in range(1, self.desiredSequence):
+            temp = fibonacciValue
+            fibonacciValue += prevValue
+            prevValue = temp
+        else:
+            return fibonacciValue

@@ -18,15 +18,19 @@ Fibonacci client (the Fibonacci server must already be running!).
   - Returns the Fibonacci value for the user supplied Fibonacci sequence.
  - `python3 fibonacci-test.py`
   - Execute unit tests on the Fibonacci class.
+ - `./validate-pep8.sh`
+  - Runs validation on the source code against PEP8 guidelines.
 
 ## Module:
 
-- Setup script:
+- Setup script (will install all the listed modules below automatically):
  - `./setup-fib-modules.sh`
 - web.py: Provides a simple web endpoint handler for API requests for the Fibonacci server.
  - Installation: `python3 -m pip install web.py==0.40.dev0`
 - requests: Provides the Fibonacci client with a simple framework for HTTP requests (grass fed, non-GMO, too).
  - Installation: `python3 -m pip install requests`
+- pep8: (Optional).  Allows for the validate-pep8.sh script to validate code style according to PEP8 guidelines.
+ - Installation: `python3 -m pip install pep8`
 
 ## Notes
 
