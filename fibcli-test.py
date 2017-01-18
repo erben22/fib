@@ -41,11 +41,11 @@ class TestFibonacciCli(unittest.TestCase):
         of a decent size, and ensure the expected value is returned.
         """
 
-        expected_value = ("3477467391803702010525174406043359697886849349278437"
-            "106573522393041216496868459679756364593924530533774930268750207447"
-            "601458424017923787493211137199196185880957244855839195410199618845"
-            "239083591334573573345387917784809104307561074077615552181139983742"
-            "87548487")
+        expected_value = (
+            "34774673918037020105251744060433596978868493492784371065735223930"
+            "41216496868459679756364593924530533774930268750207447601458424017"
+            "92378749321113719919618588095724485583919541019961884523908359133"
+            "457357334538791778480910430756107407761555218113998374287548487")
 
         self.assertEqual(execute_fibonacci_query(1234), expected_value)
 
@@ -57,7 +57,6 @@ class TestFibonacciCli(unittest.TestCase):
 
         fibonacci_value = execute_fibonacci_query(1234567)
         self.assertTrue(fibonacci_value)
-
 
     def execute_concurrent_request(self, desired_sequence):
         """Helper method to execute a client request in a thread context.
