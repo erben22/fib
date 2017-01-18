@@ -1,29 +1,28 @@
-# Unit tests for the Fibonacci class.
-#
-# author: R. Cody Erben (erben22@gmail.com)
-# date: 01/15/2017
-#
-# TODO: Study up on Python coding styles and apply here.
+"""Unit tests for the Fibonacci class."""
 
 import unittest
 from fibonacci import Fibonacci
 
 
 class TestFibonacci(unittest.TestCase):
+    """Test class for the Fibonacci client."""
 
     def test_calculate(self):
+        """Execute the calculate method using a known value and ensure the
+        client properly executes and returns the expected value.
+        """
+
         fibonacci = Fibonacci(7)
         self.assertEqual(fibonacci.calculate(), 13)
 
-# Runner for tests in the TestFibonacci class.
 
 if __name__ == '__main__':
-    # Setup the test runner to output text results to a log file:
+    """Main method to setup logging and initiate the test runner."""
 
-    logFileName = 'fibonacci-test.log'
-    logFile = open(logFileName, "w")
-    runner = unittest.TextTestRunner(logFile)
+    log_file_name = 'fibonacci-test.log'
+    log_file = open(log_file_name, "w")
+    runner = unittest.TextTestRunner(log_file)
 
     unittest.main(testRunner=runner)
 
-    logFile.close()
+    log_file.close()

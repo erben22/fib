@@ -1,27 +1,36 @@
-# Class that provides function(s) related to calcuations of
-# Fibonacci numbers.
-#
-# author: R. Cody Erben (erben22@gmail.com)
-# date: 01/15/2017
-#
-# TODO: Study up on Python coding styles and apply here.
-# TODO: Add some additional error handling:
-#       - How do I handle desiredSequence and ensuring it is an integer.
-# TODO: Overflow handling?
-# TODO: Can I cleanup the calculation
+"""Class that provides function(s) related to calcuations of
+    Fibonacci numbers.
+
+TODO: Add some additional error handling:
+        - How do I handle desiredSequence and ensuring it is an integer.
+TODO: Overflow handling?
+TODO: Can I cleanup the calculation
+"""
 
 
 class Fibonacci:
-    def __init__(self, desiredSequence):
-        self.desiredSequence = desiredSequence
+    """This class provides Fibonacci sequence information."""
+
+    def __init__(self, desired_sequence):
+        """Initialization of the Fibonacci instance.
+
+        Arguments:
+            desired_sequence: Fibonacci sequenece to compute a value for.
+        """
+
+        self.desired_sequence = desired_sequence
 
     def calculate(self):
-        prevValue = 0
-        fibonacciValue = 1
+        """Implementation of the calculcation of a Fibonacci value for
+            the sequenece of this instance.
+        """
 
-        for _ in range(1, self.desiredSequence):
-            temp = fibonacciValue
-            fibonacciValue += prevValue
-            prevValue = temp
+        prev_value = 0
+        fibonacci_value = 1
+
+        for _ in range(1, self.desired_sequence):
+            swap_value = fibonacci_value
+            fibonacci_value += prev_value
+            prev_value = swap_value
         else:
-            return fibonacciValue
+            return fibonacci_value

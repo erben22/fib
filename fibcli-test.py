@@ -1,26 +1,26 @@
-# Test cases for the Fibonacci client using the unittest framework.
-#
-# author: R. Cody Erben (erben22@gmail.com)
-# date: 01/17/2017
+"""Test cases for the Fibonacci client using the unittest framework."""
 
 import unittest
-from fibcli import execute_fib_query
+from fibcli import execute_fibonacci_query
 
 
 class TestFibonacciCli(unittest.TestCase):
+    """Test class for the Fibonacci client."""
 
     def test_execute_fib_query_succeeds_simple(self):
-        self.assertEqual(execute_fib_query(7), str(13))
+        """Execute a simple call using a known value and ensure the client
+        properly executes and returns the expected value.
+        """
 
-# Runner for tests in the TestFibonacciCli class.
+        self.assertEqual(execute_fibonacci_query(7), str(13))
 
 if __name__ == '__main__':
-    # Setup the test runner to output text results to a log file:
+    """Main method to setup logging and initiate the test runner."""
 
-    logFileName = 'fibcli-test.log'
-    logFile = open(logFileName, "w")
-    runner = unittest.TextTestRunner(logFile)
+    log_file_name = 'fibcli-test.log'
+    log_file = open(log_file_name, "w")
+    runner = unittest.TextTestRunner(log_file)
 
     unittest.main(testRunner=runner)
 
-    logFile.close()
+    log_file.close()
